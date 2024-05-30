@@ -12,7 +12,7 @@ function RegistroHome() {
     useEffect(() => {
         async function getUsuarios() {
             try {
-                const response = await axios.get("http://localhost:4000/v1/signos/consulproduc");
+                const response = await axios.get("http://restaurante-front-git-main-davidmartinez0s-projects.vercel.app//v1/signos/consulproduc");
                 const usuariosArray = Object.values(response.data);
                 setUsuarios(usuariosArray);
             } catch (error) {
@@ -32,14 +32,14 @@ function RegistroHome() {
         }
 
         try {
-            const response = await axios.post("http://localhost:4000/v1/signos/crearproduc", {
+            const response = await axios.post("http://restaurante-front-git-main-davidmartinez0s-projects.vercel.app//v1/signos/crearproduc", {
                 nombreproduc, precio
             });
             console.log(response.data);
 
             // Update the list of users
             async function updateUsuarios() {
-                const response = await axios.get("http://localhost:4000/v1/signos/consulproduc");
+                const response = await axios.get("http://restaurante-front-git-main-davidmartinez0s-projects.vercel.app//v1/signos/consulproduc");
                 const usuariosArray = Object.values(response.data);
                 setUsuarios(usuariosArray);
             }
