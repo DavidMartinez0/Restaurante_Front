@@ -13,7 +13,7 @@ function RegistroHome() {
     useEffect(() => {
         async function getUsuarios() {
             try {
-                const response = await axios.get("https://restaurante-back-mu.vercel.app/v1/signos/verusuarios");
+                const response = await axios.get("http://localhost:4000/v1/signos/verusuarios");
                 const usuariosArray = Object.values(response.data);
                 setUsuarios(usuariosArray);
             } catch (error) {
@@ -33,14 +33,14 @@ function RegistroHome() {
         }
 
         try {
-            const response = await axios.post("https://restaurante-back-mu.vercel.app/v1/signos/usuario", {
+            const response = await axios.post("http://localhost:4000/v1/signos/usuario", {
                 username, password, rol
             });
             console.log(response.data);
 
             // Update the list of users
             async function updateUsuarios() {
-                const response = await axios.get("https://restaurante-back-mu.vercel.app/v1/signos/verusuarios");
+                const response = await axios.get("http://localhost:4000/v1/signos/verusuarios");
                 const usuariosArray = Object.values(response.data);
                 setUsuarios(usuariosArray);
             }

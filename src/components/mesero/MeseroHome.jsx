@@ -16,7 +16,7 @@ function MeseroHome() {
     useEffect(() => {
         async function getPedidos() {
             try {
-                const response = await axios.get("https://restaurante-back-mu.vercel.app/v1/signos/verpedidos");
+                const response = await axios.get("http://localhost:4000/v1/signos/verpedidos");
                 const pedidosArray = Object.values(response.data);
                 setPedidos(pedidosArray);
             } catch (error) {
@@ -29,7 +29,7 @@ function MeseroHome() {
     useEffect(() => {
         async function getProductos() {
             try {
-                const response = await axios.get("https://restaurante-back-mu.vercel.app/v1/signos/consulproduc");
+                const response = await axios.get("http://localhost:4000/v1/signos/consulproduc");
                 const productosArray = Object.values(response.data);
                 setProductos(productosArray);
             } catch (error) {
@@ -42,7 +42,7 @@ function MeseroHome() {
     useEffect(() => {
         async function getUsuarios() {
             try {
-                const response = await axios.get("https://restaurante-back-mu.vercel.app/v1/signos/verusuarios");
+                const response = await axios.get("http://localhost:4000/v1/signos/verusuarios");
                 const usuariosArray = Object.values(response.data);
                 setUsuarios(usuariosArray);
             } catch (error) {
@@ -62,12 +62,12 @@ function MeseroHome() {
         }
 
         try {
-            await axios.post("https://restaurante-back-mu.vercel.app/v1/signos/pedidos", {
+            await axios.post("http://localhost:4000/v1/signos/pedidos", {
                 id, mesero, estado, productos: selectedProducts
             });
 
             // Update the list of pedidos
-            const response = await axios.get("https://restaurante-back-mu.vercel.app/v1/signos/verpedidos");
+            const response = await axios.get("http://localhost:4000/v1/signos/verpedidos");
             const pedidosArray = Object.values(response.data);
             setPedidos(pedidosArray);
 
