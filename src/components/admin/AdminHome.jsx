@@ -22,7 +22,7 @@ function AdminHome({user}){
     }
 
     async function handleClick(e){
-        const getsignos = await axios.post("http://restaurante-front-git-main-davidmartinez0s-projects.vercel.app//v1/signos/tres",{signoEditar, textoGenero, textoEditar})
+        const getsignos = await axios.post("https://restaurante-back-mu.vercel.app/v1/signos/tres",{signoEditar, textoGenero, textoEditar})
             console.log(getsignos);
     }
     return (
