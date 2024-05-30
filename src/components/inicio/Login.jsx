@@ -13,7 +13,7 @@ function Login({ callback }) {
         // Realizar la solicitud GET para obtener los usuarios
         async function fetchUsers() {
             try {
-                const response = await axios.get("https://restaurante-back-eight.vercel.app/v1/signos/verusuarios");
+                const response = await axios.get("http://localhost:4000/v1/signos/verusuarios");
                 console.log(response.data);
             } catch (error) {
                 console.error("Error al obtener usuarios:", error);
@@ -26,7 +26,7 @@ function Login({ callback }) {
         event.preventDefault();
         try {
             // Realizar la solicitud POST para validar el usuario
-            const response = await axios.post("https://restaurante-back-eight.vercel.app/v1/signos/usuarios", {
+            const response = await axios.post("http://localhost:4000/v1/signos/usuarios", {
                 username,
                 password,
                 rol: rol // Asegúrate de enviar el rol adecuado
