@@ -22,7 +22,7 @@ function AdminHome({user}){
     }
 
     async function handleClick(e){
-        const getsignos = await axios.post("http://localhost:4000/v1/signos/tres",{signoEditar, textoGenero, textoEditar})
+        const getsignos = await axios.post("https://restaurante-back-eight.vercel.app/v1/signos/tres",{signoEditar, textoGenero, textoEditar})
             console.log(getsignos);
     }
     return (
