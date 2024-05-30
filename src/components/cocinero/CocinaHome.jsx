@@ -14,7 +14,7 @@ function CocinaHome() {
     useEffect(() => {
         async function getPedidos() {
             try {
-                const response = await axios.get("http://localhost:4000/v1/signos/verpedidos");
+                const response = await axios.get("https://restaurante-back-eight.vercel.app/v1/signos/verpedidos");
                 const pedidosArray = Object.values(response.data);
                 setPedidos(pedidosArray);
             } catch (error) {
@@ -34,12 +34,12 @@ function CocinaHome() {
         }
 
         try {
-            await axios.post("http://localhost:4000/v1/signos/pedidos", {
+            await axios.post("https://restaurante-back-eight.vercel.app/v1/signos/pedidos", {
                 id, mesero, estado, productos
             });
 
             // Update the list of pedidos
-            const response = await axios.get("http://localhost:4000/v1/signos/verpedidos");
+            const response = await axios.get("https://restaurante-back-eight.vercel.app/v1/signos/verpedidos");
             const pedidosArray = Object.values(response.data);
             setPedidos(pedidosArray);
 
